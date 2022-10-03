@@ -10,6 +10,7 @@ import Contact from './ContactComponent.js';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from './HomepageComponent.js';
 import Dishdetail from './DishdetailComponent';
+import About from './AboutComponent';
 class Main extends Component {
 
   constructor(props) {
@@ -50,6 +51,7 @@ class Main extends Component {
           <Route exact  path='/menu'><Menu dishes={this.state.dishes}/></Route>
           <Route   path='/menu/:dishId' >{DishWithId}</Route>
           <Route exact path='/contact' ><Contact></Contact></Route>
+          <Route exact  path='/aboutus'><About leaders={this.state.leaders}/></Route>
           <Redirect to="/home" >
            <Home 
             promotion={this.state.promotions.filter((promo)=> promo.featured)[0]}
